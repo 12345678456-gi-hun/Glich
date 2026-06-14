@@ -2,7 +2,7 @@
 
 # GlitchScript - Official Documentation
 **Engine:** X-PROTOCOL
-**Creator:** Shadow Glitcher
+**Creator:** Tejas Singh: Youtube Channel-} THANOXx_230: Handle-} THANOXx_230
 
 Welcome to the official syntax rulebook for **GlitchScript**. This language is designed to be highly readable, event-driven, and perfectly optimized for AI generation and rapid game development.
 
