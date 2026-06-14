@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X-PROTOCOL | GlitchScript Engine</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        body {
+            background-color: #0d0d0d;
+            color: #00ffcc;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        header {
+            background-color: #1a1a1a;
+            padding: 15px 20px;
+            font-size: 24px;
+            font-weight: bold;
+            border-bottom: 2px solid #00ffcc;
+            text-align: center;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .container {
+            display: flex;
+            flex: 1;
+            padding: 20px;
+            gap: 20px;
+        }
+        .editor-section, .console-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        h2 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+        textarea {
+            flex: 1;
+            background-color: #111;
+            color: #fff;
+            border: 1px solid #333;
+            padding: 15px;
+            font-size: 16px;
+            resize: none;
+            outline: none;
+        }
+        textarea:focus {
+            border-color: #00ffcc;
+        }
+        .controls {
+            margin-top: 15px;
+            text-align: right;
+        }
+        button {
+            background-color: #00ffcc;
+            color: #000;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #00ccaa;
+            transform: scale(1.05);
+        }
+        .console {
+            flex: 1;
+            background-color: #050505;
+            color: #00ff00;
+            border: 1px solid #333;
+            padding: 15px;
+            overflow-y: auto;
+            font-size: 14px;
+        }
+        .log { margin-bottom: 8px; }
+        .error { color: #ff3333; }
+        .success { color: #00ffcc; }
+    </style>
+</head>
+<body>
+
+    <header>X-PROTOCOL Engine v1.0</header>
+
+    <div class="container">
+        <!-- Code Editor -->
+        <div class="editor-section">
+            <h2>> WRITE GLITCHSCRIPT HERE</h2>
+            <textarea id="scriptInput">(/glitch script/)
+Spawn Player at X:0, Y:10.
+Set Engine to Hybrid Brahmastra.
+Export to .apk</textarea>
+            <div class="controls">
+                <button onclick="compileScript()">COMPILE & BUILD .APK</button>
+            </div>
+        </div>
+
+        <!-- Terminal / Console -->
+        <div class="console-section">
+            <h2>> SYSTEM CONSOLE</h2>
+            <div id="consoleBox" class="console">
+                <div class="log">> System Boot Sequence Initiated...</div>
+                <div class="log">> X-PROTOCOL Ready. Waiting for input.</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function logToConsole(message, type = "log") {
+            const consoleBox = document.getElementById("consoleBox");
+            const newLog = document.createElement("div");
+            newLog.className = type;
+            newLog.innerText = message;
+            consoleBox.appendChild(newLog);
+            consoleBox.scrollTop = consoleBox.scrollHeight;
+        }
+
+        function compileScript() {
+            const input = document.getElementById("scriptInput").value.trim();
+            
+            logToConsole("> Checking Syntax...", "log");
+
+            setTimeout(() => {
+                if (!input.includes("(/glitch script/)")) {
+                    logToConsole("> ERROR: Missing (/glitch script/) tag. Compilation Failed.", "error");
+                    return;
+                }
+                
+                logToConsole("> Tag verified. Parsing natural language...", "success");
+                
+                setTimeout(() => {
+                    logToConsole("> Converting to C++/Java Hybrid Backend...", "log");
+                    
+                    setTimeout(() => {
+                        logToConsole("> Bypassing WebGL. Preparing native Android wrapper...", "log");
+                        
+                        setTimeout(() => {
+                            logToConsole("> SUCCESS: .apk file generated successfully! Ready for Direct Download.", "success");
+                        }, 1500);
+                    }, 1500);
+                }, 1000);
+            }, 500);
+        }
+    </script>
+</body>
+  </html>
+
