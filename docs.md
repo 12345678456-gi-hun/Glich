@@ -46,5 +46,32 @@ GlitchScript natively supports mechanics for:
 3.  **Anime Fighting:** Custom power scaling, special ultimate moves.
 4.  **Racing & RPGs:** Vehicle physics, EXP leveling systems.
 5. **All types of game buildings
+
+   # GlitchScript (.gs) Core Syntax & Grammar
+
+## 1. Script Initialization
+Every script must be properly opened and closed using the official system tags.
+
+**To start a script:**
+`(/glitch script/)`
+
+**To close/end a script:**
+`(/end glitch/)`
+
+## 2. Defining Variables
+Variables in GlitchScript are defined using brackets.
+Syntax: `[variable_name] = "value"`
+Example: `[system_status] = "online"`
+
+## 3. Core Functions
+To call an action or function within the engine, use the run command.
+Syntax: `run.action_name()`
+Example: `run.initialize_void()`
+
+## 4. Comments
+To add notes in your code that the engine will ignore, use double dashes.
+Syntax: `-- This is a comment --`
+
+
 (/end/)
 
